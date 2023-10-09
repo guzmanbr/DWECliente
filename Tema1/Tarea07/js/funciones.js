@@ -1,40 +1,52 @@
 
 function dibujarCuadrado() {
-  let lados = parseInt(document.getElementById("idFilas").value);
-  let result = document.getElementById('resultado');
-  //let result=document.getElementById('resultado');
-  let horizontal ="═";
-  let vertical = "║";
-  let arribaDer="╗";
-  let abajoDer="╝";
-  let arribaIzq="╔";
-  let abajoIzq="╚";
-  // let result = '';
 
-  
-  // linea de arriba
-  for (let i = 0; i < lados; i++) {
-    result.innerHTML+= '* ';
+  let lados = document.getElementById('idFilas').value;
+  let result = document.getElementById('resultado');
+  let conta =0;
+
+  if(conta == 0){
+    result.innerHTML = "";
   }
-  
-  result.innerHTML+= '-\n';
+
+  for (let i = 0; i < lados; i++) {
+    if (i==0) {
+      result.innerHTML+= "╔";
+    }else if(i==lados-1){
+      result.innerHTML+= "╗";
+    }else{
+      result.innerHTML+= "═";
+    }
+  }
+  result.innerHTML+="<br>";
 
   // cuerpo del cuadrado
   for (let i = 0; i < lados - 2; i++) {
-    result.innerHTML+= '*';
+    result.innerHTML+= "║&nbsp;";
     for (let j = 0; j < lados + lados - 3; j++) {
-      result.innerHTML+= ' ';
+      result.innerHTML+='&nbsp;';
     }
-    result.innerHTML+= '*';
+    result.innerHTML+= "&nbsp;║";
+    result.innerHTML+="<br>";
   }
 
   // linea de abajo
   for (let i = 0; i < lados; i++) {
-    result.innerHTML+= '*';
+    if (i==0) {
+      result.innerHTML+= "╚";
+    }else if(i==lados-1){
+      result.innerHTML+= "╝";
+    }else{
+      result.innerHTML+= "═";
+    }
+    
+
   }
-  
 
 }
+
+dibujarCuadrado();
+
 
 
 
