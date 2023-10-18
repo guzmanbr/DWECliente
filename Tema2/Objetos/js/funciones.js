@@ -97,3 +97,27 @@ getInfo = function (alumno) {
     return "El alumno "+ alumno.nombre+ " "+ alumno.apellidos + " tiene "+ alumno.edad + " años";
 }
 console.log(getInfo(alumno2));
+
+
+
+let alumno1 = {
+    id: 1,
+    nombre: "Miguel"
+};
+
+let alumno2 = {
+    id: 2,
+    nombre: "Fernando"
+};
+
+let alumno3 = {
+    id: 3,
+    nombre: "Javier"
+};
+
+let alumnos = [alumno1, alumno2];
+alumnos.push(alumno3);
+
+console.log(alumnos);
+
+console.log(alumnos.length);
