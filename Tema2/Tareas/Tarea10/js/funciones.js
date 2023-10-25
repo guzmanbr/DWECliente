@@ -1,3 +1,7 @@
+import { Persona } from "./clases/clasePersona.js";
+import { Empleado } from "./clases/claseEmpleado.js";
+import { Cliente } from "./clases/claseCliente.js";
+
 
 /*
 Se pide crear unas clases con las propiedades y métodos necesarios para lograr el objetivo final.
@@ -33,4 +37,18 @@ propio”: Primera letra de cada palabra en mayúscula y las siguientes en minú
 utilizará Template String
 
 */
+
+
+
+let persona1 = new Persona ('Juan', 'Perez', 19);
+let empleado1 = new Empleado ('Federica', 'Lopez',25,22050);
+let cliente1 = new Cliente ('Antonio', 'Garcia', 28, new Date());
+
+console.log(persona1.toString());
+console.log(empleado1.toString());
+console.log(cliente1.toString());
+console.log(empleado1.idPersona);
+console.log(cliente1.idPersona);
+
+
 
