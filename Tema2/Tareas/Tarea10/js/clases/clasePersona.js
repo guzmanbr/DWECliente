@@ -12,7 +12,11 @@ export class Persona {
         this._nombre = nombre;
         this._apellido = apellido;
         this._edad = edad;
-        this._id = ++Persona.ContaPersonas; //creo un id autoincremental        
+        this._id = ++Persona.ContaPersonas; //creo un id autoincremental   
+        
+        if (Persona.ContaPersonas > Persona.MAX_PER) {
+            console.log("Numero maxiomo de personas alcanzado");
+        }
     }
 
     get nombre() {
