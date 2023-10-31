@@ -1,3 +1,5 @@
+// 
+
 //Clase producto
 
 export class Producto {
@@ -22,7 +24,7 @@ export class Producto {
     }
     //Get Set Precio
     get precio(){
-        return this._precio = this_precio;
+        return this._precio = this._precio;
     }
     set precio(precio){
         return this._precio = precio;
