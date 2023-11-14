@@ -34,6 +34,8 @@ function pasarAHexadecimal(num){
     return resultado;
 }
 
+
+
 export const misFunciones ={
     formatearA3cifras,
     crearBotonCentrado,

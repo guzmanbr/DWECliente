@@ -27,5 +27,11 @@ function nuevaBola(){
     let nuevaBola=new Bola(radio, posX, posY,'cyan',linearGradient);
     nuevaBola.visualizar();
 }
+
+function sonido() {
+    document.getElementById("audio_acierto").play();
+}
+
 const boton= misFunciones.crearBotonCentrado();
+boton.addEventListener('click', sonido);
 boton.addEventListener('click', nuevaBola);
