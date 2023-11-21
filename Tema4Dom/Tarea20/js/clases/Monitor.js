@@ -2,13 +2,13 @@
 
 export class Monitor {
 
-    static ContaMonitores = 0; // id de persona
+    static ContaMonitores = 0; 
 
-    //Creo un constructor con sus atributos
+
     constructor(marca, tamaño) {
         this._marca = marca;
         this._tamaño = tamaño;
-        this._idMonitor = ++Monitor.ContaMonitores; //creo un id autoincremental   
+        this._idMonitor ='M' + (++Monitor.ContaMonitores).toLocaleString(undefined, {minimumIntegerDigits:4 , useGrouping: false});
     }
 
     get marca() {
@@ -26,15 +26,8 @@ export class Monitor {
     }
 
     toString(){
-        return `Monitor nº: M${this._idMonitor.zeroFill()}, mAR: ${this.tipoEntrada}, Marca:${this.marca}`;
+        return `Monitor nº: ${this._idMonitor}, Marca: ${this._marca}, Tamaño:${this._tamaño}`;
     }
 }
 
 
-Number.prototype.zeroFill = function() {
-    4 -= this.toString().length;
-    if ( 4 > 0 ){
-      return new Array( 4 + (/\./.test( this ) ? 2 : 1) ).join( '0' ) + this;
-    }
-    return this + ""; // siempre devuelve tipo cadena
-}

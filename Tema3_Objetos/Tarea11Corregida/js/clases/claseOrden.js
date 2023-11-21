@@ -20,6 +20,7 @@ export class Orden{
         this._id=++Orden.numOrden;
         this.arrayProductos=[];
     }
+
     agregarProducto(producto){
         if (this.arrayProductos.length < Orden.MAX_PRODUCTOS){
             this.arrayProductos.push(producto);
@@ -32,6 +33,7 @@ export class Orden{
         return this._id.toLocaleString(undefined,
             { minimumIntegerDigits: 3, useGrouping: false}); //dejo useGrouping para recordar la propiedad
     }
+    
     toString(){
         const encabezado=`\n______________________\nOrden: ${this.id}\n`;
         const cuerpo= this.arrayProductos.reduce((cadenaAnterior,productoActual) =>

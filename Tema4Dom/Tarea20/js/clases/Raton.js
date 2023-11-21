@@ -2,16 +2,20 @@ import { DispositivoEntrada } from './DispositivoEntrada.js';//importo la clase 
 
 export class Raton extends DispositivoEntrada {
 
-    static contadorRatones = 0; // 
+    static contadorRatones = 0;  
 
-    constructor(){
+    constructor(tipoEntrada,marca){
         super(tipoEntrada,marca);//Propiedades heredadas
-        this._idRaton = ++Raton.contadorRatones; //creo un id autoincremental 
-        this._contadorRatones ='R' + (++Raton.contadorRatones).toLocaleString(undefined, {minimumIntegerDigits:4 , useGrouping: false});
+        this._idRaton = 'R' + (++Raton.contadorRatones).toLocaleString(undefined, {minimumIntegerDigits:4 , useGrouping: false});//id, mostrando 4 digitos
     }
 
     toString(){
-        return `Teclado nº: R${this._idRaton}, Tipo: ${this.tipoEntrada}, Marca:${this.marca}`;
+        return `Raton nº: ${this._idRaton}, Tipo: ${this.tipoEntrada}, Marca:${this.marca}`;
     }
+
+
 }
+
+
+
 
