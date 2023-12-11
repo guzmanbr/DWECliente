@@ -100,3 +100,18 @@ console.log("11- El elemento label de ‘Escoge sexo’");
 
 
 console.log("_________________________");
+
+
+
+let div = document.getElementById('lipsum');
+
+let array = [];
+
+console.log(div.childElementCount);
+
+
+
+guzmanghu@gmail.com
+
+
+Zamora_1172306

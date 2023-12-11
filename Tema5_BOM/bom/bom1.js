@@ -15,7 +15,6 @@ function muestraMensaje2(mensaje1,mensaje2){
 };
 
 const idTimeout1 = setTimeout(muestraMensaje,1000);
-
 const idTimeout2 = setTimeout(muestraMensaje2,1500,"Hola majos 1.5 segundos","Mensaje2");// se pasan los parametros aqui
 
 

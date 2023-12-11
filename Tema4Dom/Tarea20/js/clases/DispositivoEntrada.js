@@ -24,7 +24,6 @@ export class DispositivoEntrada {
 
 //Funcion para ssacar solo la primera  palabra de la marca
 String.prototype.nombreSolo = function() {
-
     let marcaSeparada = this.split(' ');
     return marcaSeparada[0];
 }
