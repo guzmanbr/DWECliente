@@ -16,6 +16,7 @@ export class Orden {
             console.log('AVISO: Hay más de '+Orden.MAX_PRODUCTOS);
         }
     }
+    
     //Get id
     get id(){
         return this._id;

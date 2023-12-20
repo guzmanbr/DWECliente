@@ -43,6 +43,13 @@ function validar_dni(dni) {
         return false;
     }
 }
+<<<<<<< HEAD:Tema1/Tarea05/Guzman_Tarea05/js/funciones.js
+=======
+let dni="71039937w";
+
+//Muestra en consola
+console.log(`El Dni ${dni} es ${validar_dni(dni)}`);
+>>>>>>> b5dab4a (clase):Tema1/Ejercicios/Ejercicio4_DNI/funciones/funciones.js
 
 
 
