@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: #1a1a1a;
+        }
+
+        #calculator {
+            max-width: 400px;
+            width: 100%;
+            background: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        #screen {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 10px;
+            background: #1a1a1a;
+            font-size: 1.5em;
+            box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        #inputHistorial,
+        #inputOperacion {
+            width: calc(100% - 20px);
+            padding: 8px;
+            font-size: 1em;
+            border: none;
+            background: #1a1a1a;
+            color: #fff;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+
+        button {
+            width: 25%;
+            padding: 15px;
+            font-size: 1.2em;
+            border: none;
+            background: #1a1a1a;
+            color: #fff;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        button:active {
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head><body>
+    <div id="calculator">
+        <div id="screen">
+            <input type="text" id="inputHistorial" readonly>
+            <input type="text" id="inputOperacion" readonly>
+        </div>
+        <div class="button-row">
+            <button onclick="añadirNumero('7')">7</button>
+            <button onclick="añadirNumero('8')">8</button>
+            <button onclick="añadirNumero('9')">9</button>
+            <button onclick="añadirNumero('/')">/</button>
+        </div>
+        <div class="button-row">
+            <button onclick="añadirNumero('4')">4</button>
+            <button onclick="añadirNumero('5')">5</button>
+            <button onclick="añadirNumero('6')">6</button>
+            <button onclick="añadirNumero('*')">*</button>
+        </div>
+        <div class="button-row">
+            <button onclick="añadirNumero('1')">1</button>
+            <button onclick="añadirNumero('2')">2</button>
+            <button onclick="añadirNumero('3')">3</button>
+            <button onclick="añadirNumero('-')">-</button>
+        </div>
+        <div class="button-row">
+            <button onclick="añadirNumero('0')">0</button>
+            <button onclick="añadirNumero('.')">.</button>
+            <button onclick="calcular()">=</button>
+            <button onclick="añadirNumero('+')">+</button>
+        </div>
+        <div class="button-row">
+            <button onclick="borrarTodo()">C</button>
+            <button onclick="borrar()">CE</button>
+        </div>
+    </div>
+    <script src="funciones.js"></script>
+</body>
+</html>
