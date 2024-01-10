@@ -55,7 +55,4 @@ function cambiarClase() {
         console.log(conta);
         conta--;  
     } 
-
-
-    
 }
