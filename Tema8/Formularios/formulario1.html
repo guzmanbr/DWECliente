@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulario con Validación</title>
+
+    <style>
+        input:invalid {
+            border: 2px dashed red;
+        }
+
+        input:valid {
+            border: 2px solid greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Formulario de Validación</h2>
+
+    <form id="myForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required="true">
+        <br>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email">
+        <br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        // Modificar el mensaje que sale en el email
+        // Obtenemos el elemento html de "email"
+        const email1 = document.getElementById("email");
+        const email2 = myForm.email;
+
+        // Mismo resultado
+        console.log(email1);
+        console.log(email2);
+
+        //añado un evento al input
+        email1.addEventListener('input', comprobarEmail);
+
+        //funcion para comprobar la expresion regular 
+        function comprobarEmail() {
+            //si no coincide con el formato email sale el mensaje
+            if (email.validity.typeMismatch) {
+                console.log("fallo");
+                email.setCustomValidity("!Introduzca dirección de email correcto!");
+            } else {
+                email.setCustomValidity("");
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

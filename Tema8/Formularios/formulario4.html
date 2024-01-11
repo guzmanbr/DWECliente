@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label>Nombre:</label>
+        <input type="text" required minlength="5" maxlength="50" />
+        <span id="error" class="error"></span>
+        <br />
+        <button id="comprueba">Comprueba</button>
+        <p>checkValidity: <span id="checkValidity"></span></p>
+        <p>validationMessage: <span id="validationMessage"></span></p>
+        <p>validity.valueMissing: <span id="valueMissing"></span></p>
+        <p>validity.tooShort: <span id="tooShort"></span></p>
+        <p>validity.tooLong: <span id="tooLong"></span></p>
+    </form>
+    <script>
+        document
+            .getElementById("comprueba")
+            .addEventListener("click", (event) => {
+                const inputName = document.getElementsByTagName("input")[0];
+                document.getElementById("error").innerHTML = inputName.validationMessage;
+                document.getElementById("checkValidity").innerHTML = inputName.checkValidity();
+                document.getElementById("validationMessage").innerHTML = inputName.validationMessage;
+                document.getElementById("valueMissing").innerHTML = inputName.validity.valueMissing;
+                document.getElementById("tooShort").innerHTML = inputName.validity.tooShort;
+                document.getElementById("tooLong").innerHTML = inputName.validity.tooLong;
+            });
+    </script>
+</body>
+
+</html>
