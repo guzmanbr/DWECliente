@@ -87,7 +87,7 @@ function validarFormulario() {
     }
 
     //Validar check
-    if (!condiciones) {
+    if (!condiciones.checked) {
         document.getElementById("errorCheck").innerHTML ="Acepta las condiciones.";
         return false;
     }else{
