@@ -7,9 +7,9 @@ function validarFormulario() {
     const pass = document.getElementById("pass").value;
     const pass2 = document.getElementById("pass2").value;
     const edad = document.getElementById("edad").value;
-    const hombre = document.getElementById("hombre").value;
-    const mujer = document.getElementById("mujer").value;
-    const condiciones = document.getElementById("condiciones").value;
+    const hombre = document.getElementById("hombre").checked;
+    const mujer = document.getElementById("mujer").checked;
+    const condiciones = document.getElementById("condiciones").checked;
 
 
     // Validación Nombre
@@ -79,7 +79,7 @@ function validarFormulario() {
     }
     
     //Validacion Radio
-    if (!hombre.checked || !mujer.checked) {
+    if (!hombre && !mujer) {
         document.getElementById("errorGenero").innerHTML ="Selecciona tu género.";
         return false;
     }else if (hombre.checked || mujer.checked){
