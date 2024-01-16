@@ -1,99 +1,91 @@
 
 function validarFormulario() {
-
-    const nombre = document.getElementById("nombre").value;
-    const email = document.getElementById("email").value;
-    const expresioRegular=/\S+@\S+\.\S+/;
-    const pass = document.getElementById("pass").value;
-    const pass2 = document.getElementById("pass2").value;
-    const edad = document.getElementById("edad").value;
-    const hombre = document.getElementById("hombre").checked;
-    const mujer = document.getElementById("mujer").checked;
-    const condiciones = document.getElementById("condiciones").checked;
-
+    const nombre = document.getElementById("nombre");
+    const email = document.getElementById("email");
+    const expresionRegular = /\S+@\S+\.\S+/;
+    const pass = document.getElementById("pass");
+    const pass2 = document.getElementById("pass2");
+    const edad = document.getElementById("edad");
+    const hombre = document.getElementById("hombre");
+    const mujer = document.getElementById("mujer");
+    const condiciones = document.getElementById("condiciones");
 
     // Validación Nombre
-    if (nombre === "") {
+    if (nombre.value === "") {
         document.getElementById("errorNombre").innerHTML ="Introduzca el nombre.";
-        //nombre.setCustomValidity("Introduzca el nombre.");
+        nombre.focus();
         return false;
     } else {
         document.getElementById("errorNombre").innerHTML = "";
-        //nombre.setCustomValidity("");
     }
-    // // Validación Email
-    if (email === "") {
+
+    // Validación Email
+    if (email.value === "") {
         document.getElementById("errorEmail").innerHTML ="Introduzca un email.";
-        //email.setCustomValidity("Introduzca un email.");
+        email.focus();
         return false;
     } else {
         document.getElementById("errorEmail").innerHTML = "";
-        //email.setCustomValidity("");
     }
-    if (!expresioRegular.test(email)) {
+    if (!expresionRegular.test(email.value)) {
         document.getElementById("errorEmail").innerHTML ="Introduzca un email con el formato correcto.";
-        //email.setCustomValidity("Introduzca un email con el formato correcto.");
+        email.focus();
         return false;
-    }else{
+    } else {
         document.getElementById("errorEmail").innerHTML = "";
-        //email.setCustomValidity("");
     }
 
-    ///Validacion Contraseña1
-    if (pass ==="") {
+    // Validacion Contraseña1
+    if (pass.value === "") {
         document.getElementById("errorPass").innerHTML ="Debe poner una contraseña";
-        //pass.setCustomValidity("Introduzca una contraseña.");
+        pass.focus();
         return false;
-    }else{
+    } else {
         document.getElementById("errorPass").innerHTML ="";
-        //pass.setCustomValidity("");
     }
-    
-    if(pass.length < 8){
+
+    if (pass.value.length < 8) {
         document.getElementById("errorPass").innerHTML ="La contraseña debe tener al menos 8 caracteres.";
-        //pass.setCustomValidity("La contraseña debe tener al menos 8 caracteres.");
+        pass.focus();
         return false;
-    }else{
+    } else {
         document.getElementById("errorPass").innerHTML ="";
-        //pass.setCustomValidity("");
     }
 
-    //Validacion Contraseña2
-    if (pass != pass2) {
+    // Validacion Contraseña2
+    if (pass.value !== pass2.value) {
         document.getElementById("errorPass2").innerHTML ="Las contraseñas no coinciden.";
-        //pass.setCustomValidity("Las contraseñas no coinciden.");
+        pass2.focus();
         return false;
-    }else{
+    } else {
         document.getElementById("errorPass2").innerHTML ="";
-        //pass.setCustomValidity("");
     }
 
-    //Validacion Edad
-    if (edad < 18 || edad > 99) {
+    // Validacion Edad
+    if (edad.value < 18 || edad.value > 99) {
         document.getElementById("errorEdad").innerHTML ="Debes tener al menos 18 años para registrarte.";
-        //edad.setCustomValidity("Debes tener al menos 18 años para registrarte.");
+        edad.focus();
         return false;
-    }else{
+    } else {
         document.getElementById("errorEdad").innerHTML ="";
-        //edad.setCustomValidity("");
     }
-    
-    //Validacion Radio
-    if (!hombre && !mujer) {
+
+    // Validacion Radio
+    if (!hombre.checked && !mujer.checked) {
         document.getElementById("errorGenero").innerHTML ="Selecciona tu género.";
         return false;
-    }else if (hombre.checked || mujer.checked){
+    } else {
         document.getElementById("errorGenero").innerHTML ="";
     }
 
-    //Validar check
-    if (!condiciones) {
+    // Validar check
+    if (!condiciones.checked) {
         document.getElementById("errorCheck").innerHTML ="Acepta las condiciones.";
         return false;
-    }else{
+    } else {
         document.getElementById("errorCheck").innerHTML ="";
     }
 
-    //Otras validaciones pueden agregarse según sea necesario
+
     return true; // Envía el formulario si todas las validaciones son exitosas
 }
