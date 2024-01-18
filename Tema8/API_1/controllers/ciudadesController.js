@@ -3,7 +3,6 @@
 const db = require('../database/db');//no sempre es necesario .js
 
 const getCiudades=(req,res)=>{//http://localhost:3000/ciudades
-
     db.query('SELECT * FROM ciudades', (err, resultados)=>{
         if (err) {
             console.log('Error al obtener datos de la base',err);
