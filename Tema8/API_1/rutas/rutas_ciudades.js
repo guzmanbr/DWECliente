@@ -11,10 +11,19 @@ const ciudadesController = require('../controllers/ciudadesController')
 rutasCiudades.get('/',ciudadesController.getCiudades);
 
 //POST ruta para enviar los datos y guardar los datos
-rutasCiudades.post('/add',ciudadesController.crearCiudad)
+rutasCiudades.post('/add',ciudadesController.crearCiudad);
 
+//ruta obtener un registro por id
+rutasCiudades.get('/:id',ciudadesController.getCiudadById);
 
+//rutas para actualizar un registro existente
+rutasCiudades.put('/put/:id',ciudadesController.putCiudad);
 
+//rutas para actualizar un registro existente
+rutasCiudades.patch('/patch/:id',ciudadesController.patchCiudad);
+
+//rutas para actualizar un registro existente
+rutasCiudades.patch('/:id',ciudadesController.actualizarCiudad);
 
 //exportamos la constante routes
 module.exports = rutasCiudades;
