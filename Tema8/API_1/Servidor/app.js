@@ -1,10 +1,13 @@
 //npm install express
 const express = require('express');
+//npm install cors
+const cors = require('cors');
 
 //const mysql = require('mysql');//impotar libreria mysql
 const rutasCiudades = require('./rutas/rutas_ciudades');//requerimos rutas ciudades
 const app = express();//instancia express que va a tener el servidor
 const puerto = 3000;//puerto en el que trabajaremos 3000 el habitual
+app.use(cors());//app usa cors
 app.use(express.json());//sirve para parsear el cuerpo de las peticiones a json
 
 app.use('/ciudades',rutasCiudades);//asi /ciudades es l reiz en ruta_ciudades.js
