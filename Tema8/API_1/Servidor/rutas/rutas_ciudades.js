@@ -25,5 +25,8 @@ rutasCiudades.patch('/patch/:id',ciudadesController.patchCiudad);
 //rutas para actualizar un registro existente
 rutasCiudades.patch('/:id',ciudadesController.actualizarCiudad);
 
+//rutas para borrar un registro existente
+rutasCiudades.delete('/:id',ciudadesController.deleteCiudad);
+
 //exportamos la constante routes
 module.exports = rutasCiudades;
